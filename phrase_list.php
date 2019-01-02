@@ -1,12 +1,14 @@
 <?php
 
 include('config.php');
-
+?> 
+<html>
       <table class="table-striped table">
         <th>ID</th>
         <th>Phrase</th>
         <?php
         $link = mysqli_connect("localhost", "root", "", "i218_phrases");
+
         $stmt = "SELECT * FROM `phrases`";
         $result = $link->query($stmt);
 
@@ -23,5 +25,6 @@ include('config.php');
         }
         ?>
     </table>
+    </html>
 
-    ?>
+ 

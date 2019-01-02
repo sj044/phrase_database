@@ -9,12 +9,13 @@
     <link rel="stylesheet" href="style.css"></link>
 
     <!-- Custom JS -->
- <?php $statements = file($filename, FILE_IGNORE_NEW_LINES);
- ?>
-  </head>
+   </head>
 <body>
 
 <?php
+
+include('config.php');
+
   if(isset($_GET['btn-save'])){
     // here, we will put the save-operations...
     // but we can just output some stuff that was sent to our page...
@@ -116,6 +117,33 @@ include('header.inc');
 
 <?php
 include 'footer.inc';
+?>
+<?php
+    if (isset($_GET['email'])){
+      $to      = urldecode($_GET['email']);
+      $subject = 'I say YES! to...';
+      $message = $text;
+      $headers = 'From: internet2@hdmy.de' . "\r\n" .
+          'Reply-To: internet2@hdmy.de' . "\r\n" .
+          'X-Mailer: PHP/' . phpversion();
+
+      $mailSuccess = mail($to, $subject, $message, $headers);      
+
+      /*
+      // if you want to do some rudimentary error handling...   
+      if (!$mailSuccess){
+        echo "mail not sent";
+      }
+      else {
+        echo "mail sent to: " . $to;
+      }
+      */
+    }
+?>
+<?php
+if (!isset($_GET['password']) || $_GET['password'] != "GEHEIM"){
+  die("Passwort incorrect");
+}
 ?>
 </body>
 </html>
