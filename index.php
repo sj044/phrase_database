@@ -1,24 +1,15 @@
 <?php
 $text = urldecode($_REQUEST['Unfug_0']) . " " . urldecode($_REQUEST['Unfug_1']) . " " . urldecode($_REQUEST['Unfug_2']) . "\n";
-  file_put_contents("file.txt", $text, FILE_APPEND); 
+  file_put_contents("text.txt", $text, FILE_APPEND); 
 
-
-// Falls der Name nicht übertragen wurde... (undefinierter Zustand tritt ein)
-if (empty($_GET['textfeld'])){
-die("Ist das alles?! Tschüss...");
+  if (empty($_GET['textfeld'])){
+  	die("Ist das alles?!");
 }
-// get und nicht post weil method="get" bei add.php
-// Falls ein Name übertragen wurde
-else {
-// Name in Datei schreiben
-file_put_contents("file.txt", $_GET['textfeld'], FILE_APPEND);
-}
-
+  	else {
+  		file_put_contents("text.txt", $_GET['textfeld'], FILE_APPEND);
+  	}
+  
 ?>
-
-
-<!DOCTYPE HTML>
-<html lang="DE"> <!--Angabe, dass deutsche Sprache -->
 
 <!-- urldecode — Dekodiert eine URL-kodierte Zeichenkette
 -->
@@ -35,6 +26,8 @@ Inhalt an die Datei gehängt und nicht nur der alte Inhalt
 überschrieben wird. 
 -->
 
+<!DOCTYPE HTML>
+<html lang="DE"> <!--Angabe, dass deutsche Sprache -->
 
 <body>
 
@@ -53,9 +46,13 @@ Inhalt an die Datei gehängt und nicht nur der alte Inhalt
 	<?php
 	echo $_GET ['Unfug_1'];
 	?>
-	&
+	,
 	<?php
 	echo $_GET ['Unfug_2'];
+	?>
+	&
+<?php
+	echo $_GET ['textfeld'];
 	?>
 	!
 

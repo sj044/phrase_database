@@ -1,54 +1,36 @@
 <!DOCTYPE html>
 <html lang="DE">
 <head>
-	<meta charset="UTF-8">
-	    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+     <meta charset="UTF-8">
+         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous"></link>
     <!-- Custom styles for this template -->
     <link rel="stylesheet" href="style.css"></link>
 
     <!-- Custom JS -->
-   </head>
+
+  </head>
 <body>
 
 <?php
-
-include('config.php');
-
-  if(isset($_GET['btn-save'])){
-    // here, we will put the save-operations...
-    // but we can just output some stuff that was sent to our page...
-    echo $_GET['Unfug_0'] . " " . $_GET['Unfug_1'] . " " . $_GET ['Unfug_2'];
-  }
-?>
-<?php
-  $filename = "file.txt";
-    $text = $_GET['Unfug_0'] . " " . $_GET['Unfug_1']; 
-    file_put_contents($filename, $text, FILE_APPEND);
-$text = urldecode($text);
-
-?>
-<?php
-
 include('header.inc');
-	include('nav.inc');
+     include('nav.inc');
 ?>
 
     <main role="main"> 
-    	<!-- Das main-Element enthält den (Haupt-)Inhalt einer Webseite; Durch die Auszeichnung des Hauptinhalts der Seite mit "main" können Screenreader und andere alternative Ausgabegeräte diesen erkennen und beispielsweise Header oder Navigation überspringen -->
+     <!-- Das main-Element enthält den (Haupt-)Inhalt einer Webseite; Durch die Auszeichnung des Hauptinhalts der Seite mit "main" können Screenreader und andere alternative Ausgabegeräte diesen erkennen und beispielsweise Header oder Navigation überspringen -->
 <div class="main">
 
 <form action="index.php" method="get">
 <br>
 <div class="begruessung">
-	<style>
-	.begruessung {color: blue;
-
+     <style>
+     .begruessung {color: blue;
     margin-left: 20px;
 }
 </style>
-	
+     
 </style>
 
  Name: <input type = „text“ name="Name"><br>
@@ -71,15 +53,11 @@ include('header.inc');
 <br>
 <br>
 <div class="container"> <!-- rückt  Essensauswahl als Container weiter nach rechts-->
-	<style>
-	.container {color: green;
-	}
+     <style>
+     .container {color: green;
+     }
 </style>
 <h1>I Say YES! to ...</h1>
-
-<form method="get">
- <!-- form content goes here -->
-</form>
 
 <select name="Unfug_0">
      <option value=" Burger"> Burger</option>
@@ -102,48 +80,21 @@ include('header.inc');
 
 <br>
 <br>
-<button type = "submit" class="btn btn-default" name="btn-save" value="1">Say YES!</button>
+<input type = "submit" value= "los geht's!">
 
-</form>
 </div>
 <br>
 <br>
 
 <div class= "textfeld">
-<input type="text" name="textfeld" style="width:350px; height:170px" placeholder="Sonst noch einen Wunsch?"/>
+    <textarea name="textfeld" rows="7" cols="50" placeholder="Sonst noch einen Wunsch?"></textarea>
 
-	</div>
+     </div>
+     </form>
 </main>
 
 <?php
 include 'footer.inc';
-?>
-<?php
-    if (isset($_GET['email'])){
-      $to      = urldecode($_GET['email']);
-      $subject = 'I say YES! to...';
-      $message = $text;
-      $headers = 'From: internet2@hdmy.de' . "\r\n" .
-          'Reply-To: internet2@hdmy.de' . "\r\n" .
-          'X-Mailer: PHP/' . phpversion();
-
-      $mailSuccess = mail($to, $subject, $message, $headers);      
-
-      /*
-      // if you want to do some rudimentary error handling...   
-      if (!$mailSuccess){
-        echo "mail not sent";
-      }
-      else {
-        echo "mail sent to: " . $to;
-      }
-      */
-    }
-?>
-<?php
-if (!isset($_GET['password']) || $_GET['password'] != "GEHEIM"){
-  die("Passwort incorrect");
-}
 ?>
 </body>
 </html>
