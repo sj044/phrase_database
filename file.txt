@@ -1,5 +1,13 @@
-  Donuts Brokolli   Milch 
- Burger Möhre   Cola 
- Donuts Brokolli   Milch 
- Burger Staudensellerie   Cola 
-      
+    Hot Dog Staudensellerie   Milch 
+ Spaghetti Brokolli   Cola 
+ Spaghetti Brokolli   Cola 
+ Donuts Böhnchen   Wodka 
+ Hot Dog Böhnchen   Wodka 
+ Spaghetti Böhnchen   Wodka  
+ Spaghetti Böhnchen   Wodka  
+ Spaghetti Böhnchen   Wodka  
+ Hot Dog Brokolli   Cola  
+ Burger Brokolli   Cola 
+ Burger Brokolli   Cola 
+ Burger Brokolli   Cola 
+reggeg

@@ -1,15 +1,19 @@
 <?php
 $text = urldecode($_REQUEST['Unfug_0']) . " " . urldecode($_REQUEST['Unfug_1']) . " " . urldecode($_REQUEST['Unfug_2']) . "\n";
-  file_put_contents("text.txt", $text, FILE_APPEND); 
+  file_put_contents("file.txt", $text, FILE_APPEND); 
 
   if (empty($_GET['textfeld'])){
   	die("Ist das alles?!");
 }
   	else {
-  		file_put_contents("text.txt", $_GET['textfeld'], FILE_APPEND);
+  		file_put_contents("file.txt", $_GET['textfeld'], FILE_APPEND);
   	}
   
 ?>
+
+
+<!DOCTYPE HTML>
+<html lang="DE"> <!--Angabe, dass deutsche Sprache -->
 
 <!-- urldecode — Dekodiert eine URL-kodierte Zeichenkette
 -->
@@ -26,8 +30,6 @@ Inhalt an die Datei gehängt und nicht nur der alte Inhalt
 überschrieben wird. 
 -->
 
-<!DOCTYPE HTML>
-<html lang="DE"> <!--Angabe, dass deutsche Sprache -->
 
 <body>
 
