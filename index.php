@@ -1,5 +1,5 @@
 <?php
-$text = urldecode($_REQUEST['Unfug_0']) . " " . urldecode($_REQUEST['Unfug_1']) . " " . urldecode($_REQUEST['Unfug_2']) . "\n";
+$text = "\n" . urldecode($_REQUEST['Unfug_0']) . " " . urldecode($_REQUEST['Unfug_1']) . " " . urldecode($_REQUEST['Unfug_2']) . " ";
   file_put_contents("file.txt", $text, FILE_APPEND); 
 
   if (empty($_GET['textfeld'])){
@@ -35,28 +35,24 @@ Inhalt an die Datei gehängt und nicht nur der alte Inhalt
 
 	<?php
 	echo $_GET ['Begrüßung'];
-	?>
-	&#160;
-	<?php
+?>
+	
+<?php
 	echo $_GET ['Name'];
-	?>
-	, you said yes to 
+	?>, you said yes to 
 	<?php
 	echo $_GET ['Unfug_0'];
-	?> 
-	,
+	?>,
 	<?php
 	echo $_GET ['Unfug_1'];
-	?>
-	,
+	?>,
 	<?php
 	echo $_GET ['Unfug_2'];
 	?>
 	&
 <?php
 	echo $_GET ['textfeld'];
-	?>
-	!
+	?>!
 
 </body>
 </html>

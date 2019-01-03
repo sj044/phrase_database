@@ -25,6 +25,7 @@ include('config.php');
     $text = $_GET['Unfug_0'] . " " . $_GET['Unfug_1'] . " " . $_GET['Unfug_2'] . " " . $_GET['textfeld'];
     file_put_contents($filename, $text);
 
+
 echo $_GET['Unfug_0']  . " " . $_GET['Unfug_1'] . " " . $_GET ['Unfug_2'] . " " . $_GET ['textfeld'];
   }
 
@@ -84,22 +85,22 @@ include('header.inc');
  <!-- form content goes here -->
 
 <select name="Unfug_0">
-     <option value=" Burger"> Burger</option>
-     <option value=" Hot Dog"> Hot Dog</option>
-     <option value=" Spaghetti"> Spaghetti</option>
-     <option value=" Donuts"> Donuts</option>
+     <option value="Burger">Burger</option>
+     <option value="Hot Dog">Hot Dog</option>
+     <option value="Spaghetti">Spaghetti</option>
+     <option value="Donuts">Donuts</option>
 </select>
 <select name="Unfug_1">
-     <option value="Brokolli "> Brokolli </option>
-     <option value="Möhre "> Möhre </option>
-     <option value="Staudensellerie "> Staudensellerie </option>
-     <option value="Böhnchen "> Böhnchen </option>
+     <option value="Brokolli">Brokolli</option>
+     <option value="Möhre">Möhre</option>
+     <option value="Staudensellerie">Staudensellerie</option>
+     <option value="Böhnchen">Böhnchen</option>
 </select>
 <select name="Unfug_2">
-     <option value=" Cola "> Cola </option>
-     <option value=" Milch "> Milch </option>
-     <option value=" Wodka "> Wodka </option>
-     <option value=" O-Saft "> O-Saft </option>
+     <option value="Cola">Cola</option>
+     <option value="Milch">Milch</option>
+     <option value="Wodka">Wodka</option>
+     <option value="O-Saft">O-Saft</option>
 </select>
 
 
